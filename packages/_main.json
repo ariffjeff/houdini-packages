@@ -1,0 +1,7 @@
+{
+	"env" : [
+		{"HOUDINI_DEV" : "C:/Users/ariff/Desktop/dev/DCCs/houdini"},
+		{"HOUDINI_OTLSCAN_PATH" : "$HOUDINI_DEV/otls;&"},
+		{"HOUDINI_SCRIPT_PATH" : "$HOUDINI_DEV/scripts;&"},
+	]
+}

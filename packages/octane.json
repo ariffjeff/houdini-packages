@@ -1,0 +1,11 @@
+{
+	"env" : [
+		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
+		{"OCTANE" : "$CUSTOM_PLUGIN_PATH/Octane_2020.1.5.3_Houdini_${HOUDINI_VERSION}_demo_Win64"},
+		{"HOUDINI_PATH" : "$OCTANE"},
+		{
+			"PATH" : "$OCTANE/bin",
+			"method" : "append"
+		},
+	]
+}

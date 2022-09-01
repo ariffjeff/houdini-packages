@@ -1,0 +1,8 @@
+{
+	"env" : [
+		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
+		{"MOPS" : "$CUSTOM_PLUGIN_PATH/MOPS"},
+		{"HOUDINI_OTLSCAN_PATH" : "$MOPS/otls;"},
+		{"HOUDINI_TOOLBAR_PATH" : "$MOPS/toolbar;"}
+	]
+}

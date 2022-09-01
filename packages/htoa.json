@@ -1,0 +1,11 @@
+{
+	"env" : [
+		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
+		{"HTOA" : "$CUSTOM_PLUGIN_PATH/htoa/htoa-5.5.0.0_r5b05c8c_houdini-${HOUDINI_VERSION}"},
+		{"HOUDINI_PATH" : "$HTOA"},
+		{
+			"PATH" : "$HTOA/scripts/bin",
+			"method" : "append"
+		},
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"env" : [
+		// {"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
+		{"REDSHIFT" : "C:/ProgramData/Redshift"},
+		{"HOUDINI_PATH" : "$REDSHIFT/Plugins/Houdini/${HOUDINI_VERSION}"},
+		{
+			"PATH" : "$REDSHIFT/bin",
+			"method" : "append"
+		},
+	]
+}
