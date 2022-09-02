@@ -1,5 +1,5 @@
 # houdini-packages
-An easy, generalized configuration setup for allowing Houdini to locate and use any plugins HDAs, plugins, and scripts. This is most useful for those looking to switch from the legacy `houdini.env` method.
+An easy, generalized configuration setup for allowing Houdini to locate and use any plugins HDAs, plugins, and scripts using [packages](https://www.sidefx.com/docs/houdini/ref/plugins.html). This is most useful for those looking to switch from the legacy `houdini.env` method.
 
 All of the provided `.json` package files (except `redshift.json`) are configured on the idea that all of your HDAs, plugins, and scripts are placed in a single custom directory in some  arbitrary location of your choice. This makes managing everything convenient.  
 
