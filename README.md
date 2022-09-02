@@ -4,7 +4,7 @@ An easy, generalized configuration setup for allowing Houdini to locate and use 
 Most of the provided `.json` files are configured on the idea that all of your HDAs, plugins, and scripts are placed in a single custom directory in some  arbitrary location of your choice. This makes managing everything convenient.
 
 # Install HDAs, plugins, and scripts
-For this configuration, any HDAs (aka "otls"), plugins, and scripts would be in the relevant folder inside your custom directory:
+For this configuration, any HDAs (aka "otls"), plugins, and scripts should be in the relevant folder inside your custom directory:
 - `/otls`
 - `/plugins`
 - `/scripts`
