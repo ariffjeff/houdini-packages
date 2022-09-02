@@ -1,7 +1,9 @@
 # houdini-packages
-An easy, generalized configuration setup for allowing Houdini to locate and use any plugins HDAs, plugins, and scripts.
+An easy, generalized configuration setup for allowing Houdini to locate and use any plugins HDAs, plugins, and scripts. This is most useful for those looking to switch from the legacy `houdini.env` method.
 
-Most of the provided `.json` files are configured on the idea that all of your HDAs, plugins, and scripts are placed in a single custom directory in some  arbitrary location of your choice. This makes managing everything convenient.
+Most of the provided `.json` package files are configured on the idea that all of your HDAs, plugins, and scripts are placed in a single custom directory in some  arbitrary location of your choice. This makes managing everything convenient.  
+
+Each package file uses multiple arbitrary variables for ease of readability and editing.  
 
 # Install HDAs, plugins, and scripts
 For this configuration, any HDAs (aka "otls"), plugins, and scripts should be in the relevant folder inside your custom directory:
