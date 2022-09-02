@@ -30,11 +30,11 @@ Each time you download a new plugin:
 1. Dump the new plugin folder into `/plugins` in your custom directory   
 2. Go into `/packages` (from this repository) and duplicate one of the .json files (or consider grabbing any `packages.json` file that might have come with the plugin)  
 3. Rename it to the name of the new plugin (you can name it whatever you want, it doesn't really matter)  
-4. Open the file and configure it by simply replacing all instances of the name of the original plugin with the exact name of the new plugin folder.  
+4. Open the file and configure it by simply replacing all instances of the name of the original plugin with the exact name of the new plugin folder  
 - For example, if you've duplicated `MOPS.json` and want to configure it for a new and amazing plugin of which the folder is named `fastCheeseGrater`, replace all of the four string instances of "`MOPS`" with `fastCheeseGrater`. That's it.   
-- If the new plugin folder has any periods (`.`) in the name (i.e. contains a version number like `fastCheeseGrater_1.0.2`) then you will need to remove or replace them with something else like underscores since Houdini won't parse them correctly. (i.e. `fastCheeseGrater_1_0_2`). Don't forget to change the .json package files to reflect this change as well.  
-5. Save the .json file.  
-6. Start up a new instance of Houdini and see if the plugin shows up and works.  
+- If the name of the new plugin folder has any periods (`.`) in it (i.e. contains a version number like `fastCheeseGrater_1.0.2`) then you will need to remove or replace them with something else like underscores since Houdini won't parse them correctly. (i.e. `fastCheeseGrater_1_0_2`). Don't forget to change the .json package files to reflect this change as well.  
+5. Save the .json file  
+6. Start up a new instance of Houdini and see if the plugin shows up and works  
 
 # Debugging Houdini not loading HDAs/plugins/scripts
 1. Save any changes to your config files  
