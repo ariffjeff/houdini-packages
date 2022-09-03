@@ -1,0 +1,8 @@
+{
+	"env" : [
+		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
+		{"Aelib" : "$CUSTOM_PLUGIN_PATH/Aelib"},
+		{"HOUDINI_PATH" : "$Aelib;"},
+		{"HOUDINI_TOOLBAR_PATH" : "$Aelib/toolbar;"}
+	]
+}
