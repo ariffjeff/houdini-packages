@@ -2,7 +2,7 @@
 	"env" : [
 		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
 		{"SingleVector_Tools_v1_1" : "$CUSTOM_PLUGIN_PATH/SingleVector_Tools_v1_1"},
-		{"HOUDINI_OTLSCAN_PATH" : "$SingleVector_Tools_v1_1/otls;"},
+		{"HOUDINI_PATH" : "$SingleVector_Tools_v1_1;"},
 		{"HOUDINI_TOOLBAR_PATH" : "$SingleVector_Tools_v1_1/toolbar;"}
 	]
 }

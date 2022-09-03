@@ -2,7 +2,7 @@
 	"env" : [
 		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
 		{"Infection" : "$CUSTOM_PLUGIN_PATH/Infection"},
-		{"HOUDINI_OTLSCAN_PATH" : "$Infection/otls;"},
+		{"HOUDINI_PATH" : "$Infection;"},
 		{"HOUDINI_TOOLBAR_PATH" : "$Infection/toolbar;"}
 	]
 }

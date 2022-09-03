@@ -2,7 +2,7 @@
 	"env" : [
 		{"CUSTOM_PLUGIN_PATH" : "C:/Users/ariff/Desktop/dev/DCCs/houdini/plugins"},
 		{"houflipbook" : "$CUSTOM_PLUGIN_PATH/houflipbook"},
-		{"HOUDINI_OTLSCAN_PATH" : "$houflipbook/otls;"},
+		{"HOUDINI_PATH" : "$houflipbook;"},
 		{"HOUDINI_TOOLBAR_PATH" : "$houflipbook/toolbar;"}
 	]
 }
