@@ -1,5 +1,5 @@
 # This script creates a Houdini package .json config file in the appropriate Houdini packages directory for the plugin of your choice.
-# Place this script in the same directory that contains your custom folder of Houdini plugins. Then run this script whenever you want to create a new package config.
+# Place this script in the same directory that contains your custom folder of Houdini plugins for convenience. Then run this script whenever you want to create a new package config.
 
 import json
 import os
