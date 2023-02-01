@@ -39,7 +39,7 @@ def main():
   
   # get which plugin user wants to create Houdini package json config for
   message = "Enter the name of the folder of the Houdini plugin to create a json package config for: "
-  target_plugin = input_validate_path(message, prefix=helper_config["custom_plugin_path"])
+  target_plugin = input_validate_path(message, prefix=helper_config["custom_plugin_path"], no_cwd=True)
 
   # create new json package config from template
   target_package_filepath = os.path.join(helper_config['windows_documents_path'], helper_config['target_houdini_version'], "packages", target_plugin.name + ".json")
@@ -117,7 +117,7 @@ def latest_installed_houdini_version(houdini_install_path: str) -> str:
   return houdini_versions[-1]
 
 
-def input_validate_path(message_and_user_input: str, prefix="", postfix="") -> Path:
+def input_validate_path(message_and_user_input: str, prefix="", postfix="", no_cwd=False) -> Path:
   '''
   Take user input and validates if it's a valid path.
   prefix and postfix surround message_and_user_input. This is useful for modifying the user input on the fly.
@@ -129,11 +129,15 @@ def input_validate_path(message_and_user_input: str, prefix="", postfix="") -> P
       custom_plugin_path = Path(os.path.join(prefix, input_path, postfix))
   except:
       print("Invalid path!")
-      return input_validate_path(message_and_user_input, prefix, postfix)
+      return input_validate_path(message_and_user_input, prefix, postfix, no_cwd)
+
+  if(no_cwd and (str(input_path) == '.' or str(input_path) == "")):
+    print("Invalid relative path to current directory!")
+    return input_validate_path(message_and_user_input, prefix, postfix, no_cwd)
   
   if(not custom_plugin_path.exists()):
     print("Invalid path: {}".format(custom_plugin_path))
-    return input_validate_path(message_and_user_input, prefix, postfix)
+    return input_validate_path(message_and_user_input, prefix, postfix, no_cwd)
   return custom_plugin_path
 
 
