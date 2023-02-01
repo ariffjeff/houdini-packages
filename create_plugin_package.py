@@ -70,9 +70,9 @@ def create_helper_config(path="."):
   Create the config template that supports this script.
   '''
   config = {
-    "target_houdini_version": "",
     "custom_plugin_path": "",
-    "windows_documents_path": ""
+    "windows_documents_path": "",
+    "target_houdini_version": ""
   }
   write_json(path, config)
   print("Created helper config: {}".format(path))
