@@ -36,6 +36,7 @@ def main():
   if(hv_saved == "" or hv_latest != hv_saved): # ensure always using latest installed houdini packages directory
     helper_config['target_houdini_version'] = hv_latest
     write_json(HELPER_CONFIG_FILEPATH, helper_config)
+    print("Updated target Houdini version from {} to {}".format(hv_saved, hv_latest))
   
   # get which plugin user wants to create Houdini package json config for
   message = "Enter the name of the folder of the Houdini plugin to create a json package config for: "
