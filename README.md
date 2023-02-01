@@ -26,8 +26,12 @@ On Windows it would be `C:\Users\USER\Documents\houdiniXX.X`
 If you go with the legacy `houdini.env` method, uncomment the lines you need, make the necessary path changes, and then delete `/packages`. You cannot have both methods at the same time or they will conflict with each other. Houdini will get confused :(
 
 # Newer packages method
-If you choose the newer packages method, go into each .json file and edit the paths to be relevant to your own system.
+If you choose the newer packages method, and want to use the [provided .json files](/packages), go into each file and edit the paths to be relevant to your own system.
 
+## Automatic package creation
+You can simply run [create_plugin_package.py](/create_plugin_package.py) by clicking on it. The script will automatically create the valid package json files for you in the appropriate directory for any plugins you want. This makes it so you don't need to go through manual package config creation.
+
+## Manual package creation
 Each time you download a new plugin:  
 1. Dump the new plugin folder into `/plugins` in your custom directory   
 2. Ensure the actual .hda files are in a subdirectory named `/otls` (e.g. `/plugins/my_plugin/otls/my_plugin.hda`)
