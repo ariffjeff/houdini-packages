@@ -29,11 +29,12 @@ def main():
     write_json(HELPER_CONFIG_FILEPATH, helper_config)
 
   # set latest Houdini version in the format of the Houdini install config folder names in the Windows Documents directory
-  if(not validate_path(helper_config['target_houdini_version'])):
-    lhv = latest_installed_houdini_version("C:/Program Files/Side Effects Software")
-    lhv = lhv.split(".")
-    lhv = "houdini" + lhv[0] + "." + lhv[1]
-    helper_config['target_houdini_version'] = lhv
+  hv_latest = latest_installed_houdini_version("C:/Program Files/Side Effects Software").split(".")
+  hv_latest = "houdini" + hv_latest[0] + "." + hv_latest[1] # format to packages directory names
+  hv_saved = helper_config['target_houdini_version']
+  # can't just do simple check for valid package path of an already config-saved target version since it might be out of date if a newer version of houdini is installed
+  if(hv_saved == "" or hv_latest != hv_saved): # ensure always using latest installed houdini packages directory
+    helper_config['target_houdini_version'] = hv_latest
     write_json(HELPER_CONFIG_FILEPATH, helper_config)
   
   # get which plugin user wants to create Houdini package json config for
