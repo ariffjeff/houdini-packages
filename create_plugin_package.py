@@ -41,11 +41,16 @@ def main():
   message = "Enter the name of the folder of the Houdini plugin to create a json package config for: "
   target_plugin = input_validate_path(message, prefix=helper_config["custom_plugin_path"], no_cwd=True)
 
+  # warn if plugin folder is missing otls folder which houdini requires to recognize the plugins
+  required_otls_path = os.path.join(target_plugin, "otls")
+  if(not validate_path(required_otls_path, silent=True)):
+    print("*** WARNING!: PLUGIN FOLDER IS MISSING '\otls' FOLDER. HOUDINI REQUIRES THIS TO LOCATE THE HDAs! ***\nMISSING: {}\n(The created package config will still be valid.)".format(required_otls_path))
+
   # create new json package config from template
   target_package_filepath = os.path.join(helper_config['windows_documents_path'], helper_config['target_houdini_version'], "packages", target_plugin.name + ".json")
   package_json = create_houdini_package(helper_config["custom_plugin_path"], target_plugin.name)
   write_json(target_package_filepath, package_json)
-  print("Created Houdini package config for: {} at {}".format(target_plugin.name, target_package_filepath))
+  print("\nCreated Houdini package config for: {} at {}".format(target_plugin.name, target_package_filepath))
   input("Press Enter to quit...")
 
 
@@ -141,7 +146,7 @@ def input_validate_path(message_and_user_input: str, prefix="", postfix="", no_c
   return custom_plugin_path
 
 
-def validate_path(filepath: str, do_exceptions=False) -> bool:
+def validate_path(filepath: str, do_exceptions=False, silent=False) -> bool:
   '''
   Validates a file path.
   Returns a boolean.
@@ -154,7 +159,8 @@ def validate_path(filepath: str, do_exceptions=False) -> bool:
     except:
       if(do_exceptions):
         raise Exception("Can't convert to Path object: {}".format(filepath))
-      print("Can't convert to Path object: {}".format(filepath))
+      if(not silent):
+        print("Can't convert to Path object: {}".format(filepath))
       return False
 
   # don't validate relative paths of current dir
@@ -166,7 +172,8 @@ def validate_path(filepath: str, do_exceptions=False) -> bool:
   if(not filepath.exists()):
     if(do_exceptions):
       raise Exception("Not found: {}".format(filepath))
-    print("Not found: {}".format(filepath))
+    if(not silent):
+      print("Not found: {}".format(filepath))
     return False
   
   return True
