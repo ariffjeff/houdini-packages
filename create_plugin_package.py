@@ -29,8 +29,7 @@ def main():
     write_json(HELPER_CONFIG_FILEPATH, helper_config)
 
   # set latest Houdini version in the format of the Houdini install config folder names in the Windows Documents directory
-  hv_latest = latest_installed_houdini_version("C:/Program Files/Side Effects Software").split(".")
-  hv_latest = "houdini" + hv_latest[0] + "." + hv_latest[1] # format to packages directory names
+  hv_latest = "houdini" + latest_installed_houdini_version(helper_config['windows_documents_path']) # format to packages directory names
   hv_saved = helper_config['target_houdini_version']
   # can't just do simple check for valid package path of an already config-saved target version since it might be out of date if a newer version of houdini is installed
   if(hv_saved == "" or hv_latest != hv_saved): # ensure always using latest installed houdini packages directory
@@ -97,22 +96,22 @@ def write_json(filepath: str, data) -> None:
     json.dump(data, f, indent=4)
 
 
-def latest_installed_houdini_version(houdini_install_path: str) -> str:
-  ''' Determine latest installed houdini version. '''
-  houdini_dir = Path(houdini_install_path)
+def latest_installed_houdini_version(houdini_packages_path: str) -> str:
+  '''
+  Determine the latest installed houdini version by parsing the houdiniXX.X folders.
+  Returns the version number: XX.X
+  '''
+  houdini_dir = Path(houdini_packages_path)
 
   if(not houdini_dir.exists):
-      print("Houdini install directory not found at {}".format(houdini_dir))
-      return
+      raise Exception("Invalid path: {}".format(str(houdini_dir)))
 
   ls = os.listdir(houdini_dir.__str__())
   houdini_versions = []
   for elem in ls:
-      elem_split = elem.split()
-      if(len(elem_split) == 2 and elem_split[0] == "Houdini"):
-          contains_num = any(chr.isdigit() for chr in elem_split[1])
-          if(contains_num):
-            houdini_versions.append(elem_split[1])
+    if("houdini" in elem):
+      version = elem.split("houdini")[1]
+      houdini_versions.append(version)
 
   houdini_versions.sort(key = lambda x: [int(y) for y in x.split('.')]) # sort semantic versions
   return houdini_versions[-1]
