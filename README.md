@@ -15,18 +15,24 @@ For example:
 - Dump any orphan HDAs you've downloaded or created yourself that you don't feel like organizing into `/otls`
 - Plugin folders like Redshift, MOPS, or any others that come downloaded as an organized folder that already has an `/otls` folder inside it should go into `/plugins`
 - Scripts like [`123.py`, `456.py`](https://www.sidefx.com/docs/houdini/hom/locations.html#startup), and others should be dumped in `/scripts`
+- (`/otls` and `/scripts` are located with the [`_main.json`](#newer-packages-method) config) 
 
 # Install config files
-Both the legacy `houdini.env` and newer `/packages` (.json) method are included.
+Both the legacy `houdini.env` and newer packages (`.json`) method are included.
 
-Depending on which method you decide to use, `houdini.env` or `/packages` should be placed in the Houdini install directory.  
-On Windows it would be `C:\Users\USER\Documents\houdiniXX.X`
+If you choose to go with `houdini.env`, it will be found in: `C:\Users\USER\Documents\houdiniXX.X`
+
+For package `.json` config files, they must be placed in the Houdini packages directory.
+
+On Windows it would be: `C:\Users\USER\Documents\houdiniXX.X\packages`
 
 # Legacy `houdini.env` method
 If you go with the legacy `houdini.env` method, uncomment the lines you need, make the necessary path changes, and then delete `/packages`. You cannot have both methods at the same time or they will conflict with each other. Houdini will get confused :(
 
 # Newer packages method
 If you choose the newer packages method, and want to use the [provided .json files](/packages), go into each file and edit the paths to be relevant to your own system.
+
+[`_main.json`](/packages/_main.json) is there to point directly to some folders where you may be storing any loose HDAs and scripts. `HOUDINI_OTLSCAN_PATH` and `HOUDINI_SCRIPT_PATH` in `_main.json` are what do this for you. Appropriately configure the custom variable `HOUDINI_DEV` for your system to get Houdini to successfully locate your HDAs and scripts.
 
 ## Automatic package creation
 You can simply run [create_plugin_package.py](/create_plugin_package.py) by clicking on it. The script will automatically create the valid package json files for you in the appropriate directory for any plugins you want. This makes it so you don't need to go through manual package config creation.
