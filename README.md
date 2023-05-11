@@ -1,3 +1,6 @@
+## Archived project
+This project won't be maintained anymore since a comprehensive GUI Houdini package manager was made instead: https://github.com/ariffjeff/houdini-package-manager
+
 # houdini-packages
 An easy, generalized configuration setup for allowing Houdini to locate and use any plugins HDAs, plugins, and scripts using [packages](https://www.sidefx.com/docs/houdini/ref/plugins.html). This is most useful for those looking to switch from the legacy `houdini.env` method.
 
